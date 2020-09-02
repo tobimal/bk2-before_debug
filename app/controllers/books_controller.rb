@@ -7,11 +7,15 @@ before_action :correct_user, only: [:edit, :update]
     @book = Book.find(params[:id])
     @books = Book.all
     @book_new = Book.new
+    
+    @book_comment = BookComment.new
   end
 
   def index
     @books = Book.all
     @book =Book.new
+    @book_comment = BookComment.new
+    @book_comments = BookComment.all
   end
 
   def create
